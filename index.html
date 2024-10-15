@@ -12,6 +12,13 @@
             padding: 20px;
             background-color: #f9f9f9;
         }
+        .invoice-wrapper {
+            width: 100%;
+            max-width: 1000px; /* Adjust based on your content */
+            margin: 0 auto;
+            transform: scale(0.95);
+            transform-origin: top center;
+        }
         header, footer {
             margin-bottom: 20px;
             text-align: center;
@@ -47,8 +54,8 @@
             margin-top: 10px;
         }
         img {
-            max-width: 100%; /* Make images responsive */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%;
+            height: auto;
         }
 
         @media (min-width: 600px) {
@@ -60,8 +67,8 @@
 
         @media (max-width: 600px) {
             th, td {
-                font-size: 14px; /* Smaller font on small screens */
-                padding: 4px; /* Reduced padding */
+                font-size: 14px;
+                padding: 4px;
             }
             .totals {
                 font-size: 14px;
@@ -70,96 +77,140 @@
                 font-size: 16px;
             }
         }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            .invoice-wrapper {
+                transform: scale(0.95);
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div>
-            <img src="NSK Header.png" alt="NSK Header">
+    <div class="invoice-wrapper">
+        <header>
+            <div>
+                <img src="NSK Header.png" alt="NSK Header">
+            </div>
+        </header>
+        <div class="header">
+            <div>
+                <p><strong>To</strong></p>
+                <p>Vaibhav Engeny Test User</p>
+                <p>Test, Test, Test, 22555</p>
+                <p>Emirate: Dubai Area: Dubai</p>
+                <p>Contact No.: 5588888888</p>
+            </div>
+            <div>
+                <p><strong>Date: 01-Jan-1970</strong></p>
+                <p><strong>Order No.: 21</strong></p>
+                <p>Payment Mode: Paid Online</p>
+                <p>TRN: 100287655300003</p>
+            </div>
         </div>
-    </header>
-    <div class="header">
-        <div>
-            <p><strong>To</strong></p>
-            <p>Vaibhav Engeny Test User</p>
-            <p>Test, Test, Test, 22555</p>
-            <p>Emirate: Dubai Area: Dubai</p>
-            <p>Contact No.: 5588888888</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Items</th>
+                    <th>Packing</th>
+                    <th>MRP</th>
+                    <th>Disc %</th>
+                    <th>Disc Amt</th>
+                    <th>Selling Amt</th>
+                    <th>Qty</th>
+                    <th>Net Amt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lettuce Boston</td>
+                    <td>1 Kg</td>
+                    <td>30.00</td>
+                    <td>30.00</td>
+                    <td>9.00</td>
+                    <td>21.00</td>
+                    <td>1</td>
+                    <td>21.00</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Red Radish</td>
+                    <td>1 Pack</td>
+                    <td>4.00</td>
+                    <td>30.00</td>
+                    <td>1.20</td>
+                    <td>2.80</td>
+                    <td>1</td>
+                    <td>2.80</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sakura Mix</td>
+                    <td>1 Carton</td>
+                    <td>65.00</td>
+                    <td>30.00</td>
+                    <td>19.50</td>
+                    <td>45.50</td>
+                    <td>1</td>
+                    <td>45.50</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Lettuce Boston</td>
+                    <td>1 Kg</td>
+                    <td>30.00</td>
+                    <td>30.00</td>
+                    <td>9.00</td>
+                    <td>21.00</td>
+                    <td>1</td>
+                    <td>21.00</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Red Radish</td>
+                    <td>1 Pack</td>
+                    <td>4.00</td>
+                    <td>30.00</td>
+                    <td>1.20</td>
+                    <td>2.80</td>
+                    <td>1</td>
+                    <td>2.80</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Sakura Mix</td>
+                    <td>1 Carton</td>
+                    <td>65.00</td>
+                    <td>30.00</td>
+                    <td>19.50</td>
+                    <td>45.50</td>
+                    <td>1</td>
+                    <td>45.50</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totals">
+            <p>Base Amt: 66.00</p>
+            <p>VAT Amt: 3.30</p>
+            <p>Sub Total: 69.30</p>
+            <p>You Save: 29.70</p>
+            <p>Delivery Charges: 0.00</p>
+            <p>Sub Total + Delivery: 69.30</p>
+            <p>Wallet Redeem (-): 69.30</p>
+            <p class="payable">Payable Amount: 0.00</p>
         </div>
-        <div>
-            <p><strong>Date: 01-Jan-1970</strong></p>
-            <p><strong>Order No.: 21</strong></p>
-            <p>Payment Mode: Paid Online</p>
-            <p>TRN: 100287655300003</p>
-        </div>
+
+        <footer>
+            <div>
+                <img src="NSK Footer.png" alt="NSK Footer">
+            </div>
+        </footer>
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Sr.No</th>
-                <th>Items</th>
-                <th>Packing</th>
-                <th>MRP</th>
-                <th>Disc %</th>
-                <th>Disc Amt</th>
-                <th>Selling Amt</th>
-                <th>Qty</th>
-                <th>Net Amt</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Lettuce Boston</td>
-                <td>1 Kg</td>
-                <td>30.00</td>
-                <td>30.00</td>
-                <td>9.00</td>
-                <td>21.00</td>
-                <td>1</td>
-                <td>21.00</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Red Radish</td>
-                <td>1 Pack</td>
-                <td>4.00</td>
-                <td>30.00</td>
-                <td>1.20</td>
-                <td>2.80</td>
-                <td>1</td>
-                <td>2.80</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Sakura Mix</td>
-                <td>1 Carton</td>
-                <td>65.00</td>
-                <td>30.00</td>
-                <td>19.50</td>
-                <td>45.50</td>
-                <td>1</td>
-                <td>45.50</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="totals">
-        <p>Base Amt: 66.00</p>
-        <p>VAT Amt: 3.30</p>
-        <p>Sub Total: 69.30</p>
-        <p>You Save: 29.70</p>
-        <p>Delivery Charges: 0.00</p>
-        <p>Sub Total + Delivery: 69.30</p>
-        <p>Wallet Redeem (-): 69.30</p>
-        <p class="payable">Payable Amount: 0.00</p>
-    </div>
-
-    <footer>
-        <div>
-            <img src="NSK Footer.png" alt="NSK Footer">
-        </div>
-    </footer>
 </body>
 </html>
