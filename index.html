@@ -3,58 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Invoice</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .header {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px; /* Added padding for better spacing */
+            align-items: flex-start;
+            margin-bottom: 20px;
         }
-
+        .totals {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .payable {
+            font-weight: bold;
+            border: 1px solid #000;
+            display: inline-block;
+            padding: 5px;
+            margin-top: 10px;
+        }
         img {
-            max-width: 100%;
-            height: auto;
+            max-width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
         }
 
-        .certifications {
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
-            justify-content: center; /* Center the logos */
+        @media (min-width: 600px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
 
-        .certifications img {
-            max-width: 150px; /* Limit individual certification logo size */
-            margin: 10px; /* Space between logos */
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 20px 0;
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 14px; /* Smaller font on small screens */
+                padding: 4px; /* Reduced padding */
+            }
+            .totals {
+                font-size: 14px;
+            }
+            .payable {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <div>
-        <img src="NSK Header.png" alt="NSK Header">
+    <header>
+        <div>
+            <img src="NSK Header.png" alt="NSK Header">
+        </div>
+    </header>
+    <div class="header">
+        <div>
+            <p><strong>To</strong></p>
+            <p>Vaibhav Engeny Test User</p>
+            <p>Test, Test, Test, 22555</p>
+            <p>Emirate: Dubai Area: Dubai</p>
+            <p>Contact No.: 5588888888</p>
+        </div>
+        <div>
+            <p><strong>Date: 01-Jan-1970</strong></p>
+            <p><strong>Order No.: 21</strong></p>
+            <p>Payment Mode: Paid Online</p>
+            <p>TRN: 100287655300003</p>
+        </div>
     </div>
-    
-    <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
-    <div class="certifications">
-        <img src="NSK_Invoice-placeholder.png" alt="Certification 1">
-        
-        <!-- Add more logos as needed -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Items</th>
+                <th>Packing</th>
+                <th>MRP</th>
+                <th>Disc %</th>
+                <th>Disc Amt</th>
+                <th>Selling Amt</th>
+                <th>Qty</th>
+                <th>Net Amt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Lettuce Boston</td>
+                <td>1 Kg</td>
+                <td>30.00</td>
+                <td>30.00</td>
+                <td>9.00</td>
+                <td>21.00</td>
+                <td>1</td>
+                <td>21.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Red Radish</td>
+                <td>1 Pack</td>
+                <td>4.00</td>
+                <td>30.00</td>
+                <td>1.20</td>
+                <td>2.80</td>
+                <td>1</td>
+                <td>2.80</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sakura Mix</td>
+                <td>1 Carton</td>
+                <td>65.00</td>
+                <td>30.00</td>
+                <td>19.50</td>
+                <td>45.50</td>
+                <td>1</td>
+                <td>45.50</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="totals">
+        <p>Base Amt: 66.00</p>
+        <p>VAT Amt: 3.30</p>
+        <p>Sub Total: 69.30</p>
+        <p>You Save: 29.70</p>
+        <p>Delivery Charges: 0.00</p>
+        <p>Sub Total + Delivery: 69.30</p>
+        <p>Wallet Redeem (-): 69.30</p>
+        <p class="payable">Payable Amount: 0.00</p>
     </div>
-    <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
     <footer>
         <div>
             <img src="NSK Footer.png" alt="NSK Footer">
         </div>
-    </footer>    
+    </footer>
 </body>
 </html>
